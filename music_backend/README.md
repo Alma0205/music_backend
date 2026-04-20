@@ -1,18 +1,18 @@
-# Music Project Backend
+# Proyecto Backend de Música
 
-This is the backend for the Music Project, a music management system.
+Sistema backend para gestionar información de música, artistas, productores y discográficas.
 
-## Features
+## Características
 
-- JPA entities for Persona, Musico, Productor, Discografica, Cancion
-- Repositories extending JpaRepository
-- DTOs for requests and responses
-- MapStruct mappers for entity-DTO conversion
-- Services with business logic and custom exception handling
-- Standardized error responses
-- CommandLineRunner for integration simulation
+- Entidades JPA para Persona, Músico, Productor, Discográfica y Canción
+- Repositorios para acceso a datos
+- DTOs para peticiones y respuestas
+- Mapeos automáticos con MapStruct
+- Servicios con lógica de negocio
+- Manejo de excepciones personalizado
+- Base de datos H2 en memoria
 
-## Technologies
+## Tecnologías Utilizadas
 
 - Spring Boot 3.2.0
 - JPA/Hibernate
@@ -20,19 +20,35 @@ This is the backend for the Music Project, a music management system.
 - MapStruct
 - Lombok
 
-## Running
+## Cómo Ejecutar
+
+### Opción 1: Con Maven directamente
 
 ```bash
 mvn spring-boot:run
 ```
 
-The application will start, simulate saving data through services, and print the resulting DTOs to the console.
+### Opción 2: Usar el script run.bat (Windows)
 
-## Project Structure
+Simplemente haz doble clic en `run.bat` o ejecuta desde la terminal:
 
-- `model/`: JPA entities
-- `repository/`: Data access layer
-- `dto/`: Data transfer objects
-- `mapper/`: MapStruct mappers
-- `service/`: Business logic layer
-- `exception/`: Custom exceptions
+```bash
+run.bat
+```
+
+El script configurará automáticamente las variables de entorno necesarias y ejecutará la aplicación.
+
+> **Nota**: El script busca Java y Maven en las rutas configuradas del sistema. Asegúrate de tener instalados Maven y Java 17 o superior.
+
+## Estructura del Proyecto
+
+- `model/`: Entidades JPA
+- `repository/`: Capa de acceso a datos
+- `dto/`: Objetos de transferencia de datos
+- `mapper/`: Conversiones automáticas
+- `service/`: Lógica de negocio
+- `exception/`: Excepciones personalizadas
+
+## Ejecución
+
+La aplicación se inicia, simula el guardado de datos a través de los servicios e imprime los DTOs resultantes en la consola.

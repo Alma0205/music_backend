@@ -17,38 +17,38 @@ public class MusicProjectBackendApplication {
     @Bean
     public CommandLineRunner run(MusicoService musicoService, ProductorService productorService, DiscograficaService discograficaService, CancionService cancionService) {
         return args -> {
-            System.out.println("--- Simulating service operations ---");
+            System.out.println("--- Inicializando datos de prueba ---");
 
-            // Create a discografica
+            // Crear discografica
             DiscograficaRequestDTO discograficaDTO = new DiscograficaRequestDTO();
             discograficaDTO.setNombre("Sony Music");
             discograficaDTO.setDireccion("Hollywood Blvd 123");
             DiscograficaResponseDTO discografica = discograficaService.save(discograficaDTO);
-            System.out.println("Saved Discografica: " + discografica);
+            System.out.println("Guardada Discografica: " + discografica);
 
-            // Create a productor
+            // Crear productor
             ProductorRequestDTO productorDTO = new ProductorRequestDTO();
             productorDTO.setNombre("Rick");
             productorDTO.setApellido("Rubin");
             productorDTO.setEspecialidad("Rock Production");
             ProductorResponseDTO productor = productorService.save(productorDTO);
-            System.out.println("Saved Productor: " + productor);
+            System.out.println("Guardado Productor: " + productor);
 
-            // Create a cancion
+            // Crear cancion
             CancionRequestDTO cancionDTO = new CancionRequestDTO();
             cancionDTO.setTitulo("Stairway to Heaven");
             cancionDTO.setProductorId(productor.getId());
             CancionResponseDTO cancion = cancionService.save(cancionDTO);
-            System.out.println("Saved Cancion: " + cancion);
+            System.out.println("Guardada Cancion: " + cancion);
 
-            // Create a musico
+            // Crear musico
             MusicoRequestDTO musicoDTO = new MusicoRequestDTO();
             musicoDTO.setNombre("Jimmy");
             musicoDTO.setApellido("Page");
             musicoDTO.setGenero("Rock");
             musicoDTO.setInstrumento("Guitar");
             MusicoResponseDTO musico = musicoService.save(musicoDTO);
-            System.out.println("Saved Musico: " + musico);
+            System.out.println("Guardado Musico: " + musico);
         };
     }
 }
